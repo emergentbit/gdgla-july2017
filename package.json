@@ -1,0 +1,41 @@
+{
+  "name": "deb",
+  "version": "1.0.0",
+  "description": "A desktop electron boilerplate project template. Based on https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/emergentbit/deb.git",
+  "author": "Kristan 'Krispy' Uccello <krispy@emergentbit.com>",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "react-build": "cd react-app && yarn build",
+    "pack": "electron-builder --dir",
+    "dist": "yarn react-build && electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "template",
+    "boilerplate"
+  ],
+  "devDependencies": {
+    "electron": "~1.6.2",
+    "electron-builder": "^19.11.1"
+  },
+  "build": {
+    "appId": "deb.id",
+    "mac": {
+      "category": "deb.app.category.type"
+    },
+    "files": [
+      "react-app/build/**/*",
+      "main.js",
+      "package.json"
+    ]
+  },
+  "dependencies": {
+    
+  }
+}
